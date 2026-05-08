@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anthony — Building on Base</title>
+    <meta
+      name="description"
+      content="Personal site of Anthony — shipping onchain experiments on Base."
+    />
+    <meta property="og:title" content="Anthony — Building on Base" />
+    <meta
+      property="og:description"
+      content="Shipping onchain experiments on Base."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230052FF'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="brand" href="#top">
+        <span class="dot"></span>
+        anthony<span class="muted">.builds</span>
+      </a>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">
+          <span class="pulse"></span> shipping onchain on Base
+        </p>
+        <h1>
+          I build small, useful things <br />
+          on the <span class="grad">internet of value.</span>
+        </h1>
+        <p class="lede">
+          Hi, I'm Anthony. I prototype experiments at the edge of crypto and
+          everyday software — wallets, agents, mini-games, and tools that try to
+          make onchain feel obvious.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#work">See what I'm building</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <h2>Recent work</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-tag">vue · web</div>
+            <h3>moon-money</h3>
+            <p>
+              A playful frontend that visualizes onchain activity as orbital
+              motion. Built to learn shader math and make charts feel less
+              boring.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-tag">python · data</div>
+            <h3>LP</h3>
+            <p>
+              Tooling for poking at liquidity-pool behavior — fee curves,
+              impermanent loss back-tests, and a tiny CLI for daily checks.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-tag">typescript · bot</div>
+            <h3>offsite-bot-hangman</h3>
+            <p>
+              A multiplayer hangman bot that runs in chat. Mostly an excuse to
+              play with state machines and silly word lists.
+            </p>
+          </article>
+          <article class="card soon">
+            <div class="card-tag">soon</div>
+            <h3>something new</h3>
+            <p>
+              The next thing is half-built and probably broken on my laptop
+              right now. Check back.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <h2>About</h2>
+        <p>
+          I'm an independent builder. I like small teams, small repos, and
+          shipping things to real users on day one. Most of what I make lives on
+          Base because the fees are low enough to stop thinking about fees.
+        </p>
+        <p>
+          Outside of code: long walks, longer reading lists, and an unhealthy
+          number of half-finished side quests.
+        </p>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Say hi</h2>
+        <p class="lede">
+          Open to collaborations, contract work, and weird ideas with a working
+          demo.
+        </p>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/AnthonyBuildsOnBase" target="_blank" rel="noopener">
+              GitHub →
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@example.com">Email →</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Anthony. Built static, served free.</span>
+      <span class="muted">Deployed via GitHub Pages.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
