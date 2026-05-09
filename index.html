@@ -3,85 +3,195 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anthonyk.base.eth</title>
-    <meta
-      name="description"
-      content="Personal site of Anthonyk.base.eth — DeFi Ecosystem Analyst at Base."
-    />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230052FF'/%3E%3C/svg%3E" />
+    <title>anthony - Google Docs</title>
+    <meta name="description" content="Personal site of anthony." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%234285f4'/%3E%3Cpath d='M30 25h30l15 15v35a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5V30a5 5 0 0 1 5-5z' fill='white'/%3E%3Cpath d='M60 25v15h15z' fill='%23a1c2fa'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="theme-toggle">
-      <button id="themeBtn" aria-label="Toggle theme" type="button">
-        <svg class="icon dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-    </div>
-
-    <div class="container">
-      <main>
-        <header class="intro">
-          <h1>Anthonyk.base.eth</h1>
-          <p class="lead muted">Manhattan, NY · DeFi Ecosystem Analyst at Base</p>
-          <div class="social-links">
-            <a href="https://github.com/AnthonyBuildsOnBase">GitHub</a> ·
-            <a href="https://www.linkedin.com/in/anthony-katwan-566675175/">LinkedIn</a> ·
-            <a href="https://x.com/0xblockboy">Twitter</a>
+    <div class="docs-app">
+      <header class="topbar">
+        <a class="docs-logo" href="#" aria-label="Docs home" title="Docs home">
+          <svg viewBox="0 0 50 50" width="40" height="40">
+            <rect width="50" height="50" rx="8" fill="#4285f4"/>
+            <path d="M14 11h16l8 8v18a3 3 0 0 1-3 3H14a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z" fill="white"/>
+            <path d="M30 11v8h8z" fill="#a1c2fa"/>
+            <rect x="16" y="24" width="18" height="1.5" fill="#4285f4"/>
+            <rect x="16" y="28" width="18" height="1.5" fill="#4285f4"/>
+            <rect x="16" y="32" width="14" height="1.5" fill="#4285f4"/>
+          </svg>
+        </a>
+        <div class="title-stack">
+          <div class="title-row">
+            <input class="doc-title" value="anthony" readonly />
+            <button class="icon-btn" title="Star" aria-label="Star">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5f6368" stroke-width="1.6"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </button>
+            <button class="icon-btn" title="Move" aria-label="Move">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5f6368" stroke-width="1.6"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg>
+            </button>
+            <span class="saved">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5f6368" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
           </div>
-          <p class="lead">
-            Passionate about political and economic tools that empower
-            individuals to realize the full value of the internet.
-          </p>
-        </header>
+          <nav class="menu">
+            <span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Tools</span><span>Extensions</span><span>Help</span>
+          </nav>
+        </div>
+        <div class="topbar-right">
+          <button class="comments-btn" title="Comments">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5f6368" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="share-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+            Share
+          </button>
+          <div class="avatar">A</div>
+        </div>
+      </header>
 
-        <section class="content-section">
-          <h2 class="section-title">Now</h2>
-          <div class="section-content">
-            Working at
-            <a href="https://www.base.org/about?utm_source=dotorg&utm_medium=nav">Base</a>
-            to bring the world's financial markets onchain.
+      <div class="toolbar">
+        <button class="tb">↶</button>
+        <button class="tb">↷</button>
+        <button class="tb">🖨</button>
+        <span class="tb-sep"></span>
+        <button class="tb-text">100%<span class="caret">▾</span></button>
+        <span class="tb-sep"></span>
+        <button class="tb-text wide">Normal text<span class="caret">▾</span></button>
+        <span class="tb-sep"></span>
+        <button class="tb-text">Arial<span class="caret">▾</span></button>
+        <span class="tb-sep"></span>
+        <button class="tb">−</button>
+        <span class="size-box">11</span>
+        <button class="tb">+</button>
+        <span class="tb-sep"></span>
+        <button class="tb"><b>B</b></button>
+        <button class="tb"><i>I</i></button>
+        <button class="tb"><u>U</u></button>
+        <button class="tb tb-color"><span>A</span><span class="color-bar"></span></button>
+        <span class="tb-sep"></span>
+        <button class="tb">🔗</button>
+        <button class="tb">💬</button>
+      </div>
+
+      <div class="canvas">
+        <div class="page">
+          <div class="page-content">
+            <h1 class="doc-h1">anthony</h1>
+            <p class="doc-sub">citizen of the world</p>
+            <p class="doc-link"><a href="https://x.com/0xblockboy">twitter</a></p>
+            <p class="doc-body">
+              At <a href="https://www.base.org/about?utm_source=dotorg&utm_medium=nav">Base</a>, helping bring the world's financial markets onchain, after years of web3 research, GTM strategy, and hacking. Drawn to tools that empower individuals to realize the full value of the internet.
+            </p>
+
+            <h2 class="doc-h2">Readings</h2>
+            <ul class="doc-list">
+              <li><a href="https://writings.stephenwolfram.com/2019/06/testifying-at-the-senate-about-a-i-selected-content-on-the-internet/">Testifying at the Senate about A.I.-Selected Content on the Internet</a></li>
+              <li><a href="https://www.ribbonfarm.com/2018/11/28/the-digital-maginot-line/">The Digital Maginot Line</a></li>
+              <li><a href="https://kk.org/thetechnium/1000-true-fans/">1,000 True Fans</a></li>
+              <li><a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/">Meditations on Moloch</a></li>
+              <li><a href="https://alexdanco.com/2019/09/07/positional-scarcity/">Positional Scarcity</a></li>
+              <li><a href="https://www.jofreeman.com/joreen/tyranny.htm">The Tyranny of Structurelessness</a></li>
+              <li><a href="https://nickbostrom.com/fable/dragon">The Fable of the Dragon-Tyrant</a></li>
+              <li><a href="https://meaningness.com/geeks-mops-sociopaths">Geeks, MOPs, and sociopaths in subculture evolution</a></li>
+              <li><a href="https://www.usv.com/writing/2016/08/fat-protocols/">Fat Protocols</a></li>
+            </ul>
+
+            <h2 class="doc-h2">Writings</h2>
+            <ul class="doc-list" id="writings-list">
+              <li>Loading from <a href="https://newontheblock.substack.com">newontheblock.substack.com</a>&hellip;</li>
+            </ul>
+
+            <h2 class="doc-h2">Quotes</h2>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Any fool can know. The point is to understand.&rdquo;</p>
+              <footer>&mdash; Albert Einstein</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;It&rsquo;s more fun to be a pirate than to join the navy.&rdquo;</p>
+              <footer>&mdash; Steve Jobs</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;When you can&rsquo;t change the direction of the wind, adjust your sails.&rdquo;</p>
+              <footer>&mdash; H. Jackson Brown Jr.</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Freedom isn&rsquo;t secured by filling up your heart&rsquo;s desire but by removing desire.&rdquo;</p>
+              <footer>&mdash; Epictetus</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Direction is far more important than speed. A lot of people are going nowhere fast.&rdquo;</p>
+              <footer>&mdash; Elon Musk</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Experience is not what happens to a man; it is what a man does with what happens to him.&rdquo;</p>
+              <footer>&mdash; Aldous Huxley</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Life is short, art long, opportunity fleeting, experience treacherous, judgment difficult.&rdquo;</p>
+              <footer>&mdash; Hippocrates</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;The real voyage of discovery consists not in seeing new landscapes, but in having new eyes.&rdquo;</p>
+              <footer>&mdash; Marcel Proust</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Let us balance life&rsquo;s books each day&hellip; The one who puts the finishing touches on their life each day is never short of time.&rdquo;</p>
+              <footer>&mdash; Seneca</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;My mother said to me, &lsquo;If you are a soldier, you will become a general. If you are a monk, you will become the Pope.&rsquo; Instead, I was a painter, and became Picasso.&rdquo;</p>
+              <footer>&mdash; Pablo Picasso</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;If you want to build a ship, don&rsquo;t drum up the men and women to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea.&rdquo;</p>
+              <footer>&mdash; Antoine de Saint-Exup&eacute;ry</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;People think focus means saying yes to the thing you&rsquo;ve got to focus on. But that&rsquo;s not what it means at all. It means saying no to the hundred other good ideas that there are.&rdquo;</p>
+              <footer>&mdash; Steve Jobs</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;Above all, do not lie to yourself. A man who lies to himself and listens to his own lie comes to a point where he does not discern any truth either in himself or anywhere around him, and thus falls into disrespect towards himself and others.&rdquo;</p>
+              <footer>&mdash; Fyodor Dostoevsky</footer>
+            </blockquote>
+
+            <blockquote class="doc-quote">
+              <p>&ldquo;To laugh is to risk appearing a fool.<br />
+              To weep is to risk being called sentimental.<br />
+              To reach out to another is to risk involvement.<br />
+              To expose feelings is to risk exposing your true self.<br />
+              To place your ideas and dreams before a crowd is to risk their loss.<br />
+              To love is to risk not being loved in return.<br />
+              To live is to risk dying.<br />
+              To try is to risk failure.</p>
+              <p>But risk must be taken, because the greatest hazard in life is to risk nothing. The people who risk nothing may avoid suffering and sorrow, but they cannot learn, feel, change, grow, or really live. Chained by their servitude, they are slaves who have forfeited all freedom. Only a person who risks is truly free.&rdquo;</p>
+              <footer>&mdash; Leo F. Buscaglia</footer>
+            </blockquote>
+
+            <p class="doc-cursor"><span class="caret-blink"></span></p>
           </div>
-        </section>
-
-        <section class="content-section">
-          <h2 class="section-title">Previously</h2>
-          <div class="section-content">
-            • Web3 research and consulting for enterprises<br />
-            • Business ops and strategy for GTM organizations<br />
-            • DAO contributor and open source development
-          </div>
-        </section>
-
-        <section class="content-section">
-          <h2 class="section-title">Favorite Readings</h2>
-          <div class="section-content">
-            • <a href="https://writings.stephenwolfram.com/2019/06/testifying-at-the-senate-about-a-i-selected-content-on-the-internet/">Testifying at the Senate about A.I.-Selected Content on the Internet</a><br />
-            • <a href="https://www.ribbonfarm.com/2018/11/28/the-digital-maginot-line/">The Digital Maginot Line</a><br />
-            • <a href="https://kk.org/thetechnium/1000-true-fans/">1,000 True Fans</a><br />
-            • <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/">Meditations on Moloch</a><br />
-            • <a href="https://alexdanco.com/2019/09/07/positional-scarcity/">Positional Scarcity</a><br />
-            • <a href="https://www.jofreeman.com/joreen/tyranny.htm">The Tyranny of Structurelessness</a><br />
-            • <a href="https://nickbostrom.com/fable/dragon">The Fable of the Dragon-Tyrant</a><br />
-            • <a href="https://meaningness.com/geeks-mops-sociopaths">Geeks, MOPs, and sociopaths in subculture evolution</a><br />
-            • <a href="https://www.usv.com/writing/2016/08/fat-protocols/">Fat Protocols</a>
-          </div>
-        </section>
-
-        <section class="content-section">
-          <h2 class="section-title">My Writings</h2>
-          <div class="section-content">
-            <div id="writings">
-              Loading latest from
-              <a href="https://newontheblock.substack.com">newontheblock.substack.com</a>…
-            </div>
-          </div>
-        </section>
-
-        <footer class="muted">
-          <p>Last updated <span id="updated"></span></p>
-        </footer>
-      </main>
+        </div>
+        <div class="page-meta">
+          <span id="updated"></span>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>

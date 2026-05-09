@@ -1,41 +1,53 @@
 (function () {
-  const btn = document.getElementById("themeBtn");
-  const saved = localStorage.getItem("theme") || "light";
-  if (saved === "dark") document.body.classList.add("dark-theme");
-  btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark-theme") ? "dark" : "light"
-    );
-  });
-
   const updated = document.getElementById("updated");
-  updated.textContent = new Date().toLocaleString("en-US", {
-    month: "long",
-    year: "numeric",
-  });
+  updated.textContent =
+    "Last edit was " +
+    new Date().toLocaleString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
 
-  const writingsEl = document.getElementById("writings");
-  const FEED = "https://newontheblock.substack.com/feed";
-  fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent(FEED))
-    .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
-    .then((xml) => {
-      const doc = new DOMParser().parseFromString(xml, "text/xml");
-      const items = Array.from(doc.querySelectorAll("item")).slice(0, 5);
-      if (!items.length) throw new Error("empty");
-      writingsEl.innerHTML = items
-        .map((item) => {
-          const title = item.querySelector("title")?.textContent || "Untitled";
-          const link = item.querySelector("link")?.textContent || "#";
-          const pub = item.querySelector("pubDate")?.textContent;
-          const year = pub ? new Date(pub).getFullYear() : "";
-          return `• <a href="${link}">${title}</a>${year ? ` (${year})` : ""}`;
-        })
-        .join("<br />");
-    })
+  const writingsList = document.getElementById("writings-list");
+
+  function render(items) {
+    if (!items || !items.length) {
+      writingsList.innerHTML =
+        '<li>Read at <a href="https://newontheblock.substack.com">newontheblock.substack.com</a></li>';
+      return;
+    }
+    writingsList.innerHTML = "";
+    items.forEach((it) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = it.link;
+      a.textContent = it.title + (it.year ? ` (${it.year})` : "");
+      li.appendChild(a);
+      writingsList.appendChild(li);
+    });
+  }
+
+  // Prefer the JSON baked at deploy time; fall back to the RSS proxy if missing.
+  fetch("writings.json", { cache: "no-store" })
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then(render)
     .catch(() => {
-      writingsEl.innerHTML =
-        'Read at <a href="https://newontheblock.substack.com">newontheblock.substack.com</a> →';
+      const FEED = "https://newontheblock.substack.com/feed";
+      return fetch("https://api.allorigins.win/raw?url=" + encodeURIComponent(FEED))
+        .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+        .then((xml) => {
+          const doc = new DOMParser().parseFromString(xml, "text/xml");
+          const items = Array.from(doc.querySelectorAll("item"))
+            .slice(0, 8)
+            .map((item) => {
+              const title = item.querySelector("title")?.textContent || "Untitled";
+              const link = item.querySelector("link")?.textContent || "#";
+              const pub = item.querySelector("pubDate")?.textContent;
+              const year = pub ? new Date(pub).getFullYear() : "";
+              return { title, link, year };
+            });
+          render(items);
+        })
+        .catch(() => render(null));
     });
 })();

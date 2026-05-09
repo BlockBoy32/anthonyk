@@ -4,6 +4,9 @@ on:
   push:
     branches: [main, "claude/github-pages-deployment-gDVS4"]
   workflow_dispatch:
+  schedule:
+    # Refresh writings.json daily at 06:00 UTC
+    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -22,9 +25,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Refresh writings.json from Substack RSS
+        run: |
+          python3 .github/scripts/fetch_writings.py > writings.json
+          echo "--- writings.json ---"
+          cat writings.json
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - id: deployment
         uses: actions/deploy-pages@v4
