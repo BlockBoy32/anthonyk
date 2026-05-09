@@ -336,7 +336,8 @@ a:visited { color: #6f1ab1; }
   margin-top: 8px;
 }
 
-@media (max-width: 720px) {
+/* Tablet & smaller phones: collapse the helper icons + menu */
+@media (max-width: 900px) {
   .topbar {
     padding: 8px 10px;
     gap: 8px;
@@ -372,8 +373,11 @@ a:visited { color: #6f1ab1; }
   .doc-sub { font-size: 12pt; }
 }
 
-@media (max-width: 420px) {
-  .share-btn span,
-  .share-btn { font-size: 0; padding: 8px; }
+/* Narrow phones: collapse the Share label too */
+@media (max-width: 480px) {
+  .share-btn {
+    padding: 8px;
+    font-size: 0;
+  }
   .share-btn svg { width: 16px; height: 16px; }
 }
