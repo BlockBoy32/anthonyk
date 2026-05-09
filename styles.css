@@ -354,22 +354,17 @@ a:visited { color: #6f1ab1; }
   .saved { padding: 4px; margin-left: 2px; }
   .saved svg { width: 14px; height: 14px; }
 
-  /* Menu: never wrap — slide horizontally if it overflows */
+  /* Menu wraps to multiple lines so every item stays visible */
   .menu {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
     padding-left: 0;
     margin-top: 1px;
+    row-gap: 0;
   }
-  .menu::-webkit-scrollbar { display: none; }
   .menu span {
     font-size: 12px;
     padding: 3px 6px;
     white-space: nowrap;
-    flex-shrink: 0;
   }
 
   .topbar-right { gap: 4px; }
