@@ -336,48 +336,71 @@ a:visited { color: #6f1ab1; }
   margin-top: 8px;
 }
 
-/* Tablet & smaller phones: collapse the helper icons + menu */
+/* Tablet & phones: shrink the chrome but keep everything visible */
 @media (max-width: 900px) {
   .topbar {
-    padding: 8px 10px;
-    gap: 8px;
+    padding: 6px 8px;
+    gap: 6px;
     align-items: center;
   }
   .docs-logo { margin-top: 0; }
   .docs-logo svg { width: 28px; height: 28px; }
-  .title-stack { gap: 0; }
+
+  .title-stack { gap: 0; min-width: 0; }
+  .title-row { gap: 2px; }
   .doc-title {
-    font-size: 16px;
-    padding: 4px 6px;
-    width: 100%;
+    font-size: 15px;
+    padding: 3px 6px;
     min-width: 0;
+    flex: 1;
   }
-  .title-row .icon-btn,
-  .title-row .saved,
-  .menu,
-  .comments-btn,
-  .avatar { display: none; }
+
+  .icon-btn { padding: 4px; }
+  .icon-btn svg { width: 16px; height: 16px; }
+  .saved { padding: 4px; margin-left: 2px; }
+  .saved svg { width: 14px; height: 14px; }
+
+  /* Menu: never wrap — slide horizontally if it overflows */
+  .menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 0;
+    margin-top: 1px;
+  }
+  .menu::-webkit-scrollbar { display: none; }
+  .menu span {
+    font-size: 12px;
+    padding: 3px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .topbar-right { gap: 4px; }
+  .comments-btn { padding: 6px; }
+  .comments-btn svg { width: 18px; height: 18px; }
   .share-btn {
     padding: 6px 12px;
     font-size: 13px;
   }
-  .share-btn svg { width: 14px; height: 14px; }
+  .share-btn svg { width: 13px; height: 13px; }
+  .avatar { width: 28px; height: 28px; font-size: 12px; }
 
-  .toolbar {
-    margin: 4px 8px 8px;
-    padding: 4px 8px;
-  }
+  .toolbar { margin: 4px 8px 8px; padding: 4px 8px; }
 
   .page { padding: 36px 24px; }
   .doc-h1 { font-size: 22pt; }
   .doc-sub { font-size: 12pt; }
 }
 
-/* Narrow phones: collapse the Share label too */
+/* Narrow phones (≤480px): drop a few of the lowest-priority icons so the rest fit */
 @media (max-width: 480px) {
-  .share-btn {
-    padding: 8px;
-    font-size: 0;
-  }
+  .title-row .icon-btn { display: none; }
+  .saved { display: none; }
+  .comments-btn { display: none; }
+  .share-btn span { display: none; }
+  .share-btn { padding: 8px; font-size: 0; }
   .share-btn svg { width: 16px; height: 16px; }
 }
