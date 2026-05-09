@@ -33,9 +33,9 @@ jobs:
 
       - name: Refresh writings.json from Substack RSS
         run: |
-          python3 .github/scripts/fetch_writings.py > writings.json
-          echo "--- writings.json ---"
-          cat writings.json
+          python3 .github/scripts/fetch_writings.py writings.json
+          echo "--- writings.json (head) ---"
+          head -20 writings.json
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
