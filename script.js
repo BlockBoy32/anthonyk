@@ -1,13 +1,4 @@
 (function () {
-  const updated = document.getElementById("updated");
-  updated.textContent =
-    "Last edit was " +
-    new Date().toLocaleString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
-
   const writingsList = document.getElementById("writings-list");
 
   function render(items) {

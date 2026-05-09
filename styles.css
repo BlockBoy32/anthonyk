@@ -330,12 +330,6 @@ a:visited { color: #6f1ab1; }
   to { visibility: hidden; }
 }
 
-.page-meta {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
 /* Tablet & phones: shrink the chrome but keep everything visible */
 @media (max-width: 900px) {
   .topbar {
