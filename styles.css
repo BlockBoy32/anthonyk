@@ -278,6 +278,13 @@ body {
   line-height: 1.3;
 }
 
+.doc-lead {
+  margin-bottom: 8px;
+}
+.doc-list + .doc-lead {
+  margin-top: 20px;
+}
+
 .doc-list {
   margin: 0 0 18px;
   padding-left: 24px;
