@@ -24,6 +24,9 @@ from email.utils import parsedate_to_datetime
 HOST = "newontheblock.substack.com"
 FEED = f"https://{HOST}/feed"
 ARCHIVE = f"https://{HOST}/api/v1/archive?sort=new&limit=20"
+RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" + urllib.parse.quote(
+    FEED, safe=""
+)
 LIMIT = 8
 DEFAULT_OUTPUT = "writings.json"
 
@@ -103,6 +106,26 @@ def parse_archive(data):
     return items
 
 
+def parse_rss2json(data):
+    """Parse rss2json, which fetches the feed from its own servers."""
+    payload = json.loads(data.decode("utf-8", "replace"))
+    if payload.get("status") != "ok":
+        raise ValueError(payload.get("message") or "rss2json returned an error")
+    items = []
+    for post in payload.get("items", []):
+        date = (post.get("pubDate") or "")[:4]
+        items.append(
+            {
+                "title": (post.get("title") or "Untitled").strip(),
+                "link": (post.get("link") or "#").strip(),
+                "year": int(date) if date.isdigit() else "",
+            }
+        )
+        if len(items) >= LIMIT:
+            break
+    return items
+
+
 def proxied(url):
     quoted = urllib.parse.quote(url, safe="")
     return [
@@ -140,7 +163,7 @@ def try_fetch(url, parse):
 
 
 def fetch():
-    sources = [(FEED, parse_rss), (ARCHIVE, parse_archive)]
+    sources = [(FEED, parse_rss), (ARCHIVE, parse_archive), (RSS2JSON, parse_rss2json)]
     sources += [(u, parse_rss) for u in proxied(FEED)]
     sources += [(u, parse_archive) for u in proxied(ARCHIVE)]
     for url, parse in sources:
