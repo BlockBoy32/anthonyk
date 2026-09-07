@@ -9,7 +9,7 @@ on:
     - cron: "0 6 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -36,6 +36,18 @@ jobs:
           python3 .github/scripts/fetch_writings.py writings.json
           echo "--- writings.json (head) ---"
           head -20 writings.json
+
+      - name: Commit refreshed writings.json
+        run: |
+          if git diff --quiet -- writings.json; then
+            echo "writings.json unchanged; nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add writings.json
+          git commit -m "Refresh writings.json from Substack RSS [skip ci]"
+          git push
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
